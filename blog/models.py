@@ -1,25 +1,19 @@
 from django.db import models
 
 
-class Articles(models):
-    def title(self):
-        title = "010101"
-        return title
+class Articles(models.Model):
 
-    def description(self):
-        descriptions = "010101"
+    title = models.CharField(max_length=200)
 
-        return descriptions
+    description = models.CharField(max_length=200)
 
-    def body(self):
-        body = "10101"
-        return body
+    body = models.CharField(max_length=5000)
 
-    def date(self):
-        date = "101010"
-        return date
+    date = models.DateField()
 
-    def category(self, category):
-        category = "010101"
-        return category
+    category = models.CharField(max_length=50)
+
+
+
+
     # Create your models here.
