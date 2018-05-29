@@ -7,9 +7,9 @@ As the project is written, instructions will be added.
 
 **Prerequisites**
 
-1. 
-2. 
-3.
+1. OS - Ubuntu 16+
+2. clone && install Django
+3. clone this project
 
 **How to run**
 
