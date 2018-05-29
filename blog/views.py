@@ -6,9 +6,9 @@ from django.http import HttpResponse
 
 
 def index(request):
-    latest_question_list = Articles.objects.order_by('-date')[:5]
-    output = ', '.join([q.question_text for q in latest_question_list])
-    return HttpResponse('Hello world' + output)
+    articles = Articles.objects.order_by('-date')[:5]
+    output = ', '.join([a.title for a in articles])
+    return HttpResponse('Hello world ' + output)
 
 
 def detail(request, article_id):
