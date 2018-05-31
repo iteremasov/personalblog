@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+<div class="text">output</div>
+
+
+<div>
+    {% for a in articles %}
+    <a href="http://www.google.com/">{{a.title}}</a>
+    <div>{{a.description}}</div>
+    {%endfor%}
+</div>
+</body>
+</html>

@@ -8,10 +8,15 @@ from django.template.response import TemplateResponse
 
 giphy = giphypop.Giphy()
 
+
 def index(request):
-    articles = Articles.objects.order_by('-date')[:5]
-    output = ', '.join([a.title for a in articles])
-    return HttpResponse('Hello world ' + output)
+    # articles = Articles.objects.order_by('-date')[:5]
+    # output = ', '.join([a.title for a in articles])
+    articles = Articles.objects.all()
+    # return HttpResponse('Hello world ' + output)
+    # return render(request, 'index.html', output)
+    # return TemplateResponse(request, 'index.html', output)
+    return TemplateResponse(request, 'index.html', {'articles': articles})
 
 
 def detail(request, article_id):
