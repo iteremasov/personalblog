@@ -6,12 +6,10 @@
 </head>
 
 <body>
-<div class="text">output</div>
-
 
 <div>
     {% for a in articles %}
-    <a href="http://www.google.com/">{{a.title}}</a>
+    <a href="{% url 'detail' a.id %}">{{a.title}}</a>
     <div>{{a.description}}</div>
     {%endfor%}
 </div>

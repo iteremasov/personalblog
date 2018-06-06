@@ -10,17 +10,14 @@ giphy = giphypop.Giphy()
 
 
 def index(request):
-    # articles = Articles.objects.order_by('-date')[:5]
-    # output = ', '.join([a.title for a in articles])
     articles = Articles.objects.all()
-    # return HttpResponse('Hello world ' + output)
-    # return render(request, 'index.html', output)
-    # return TemplateResponse(request, 'index.html', output)
     return TemplateResponse(request, 'index.html', {'articles': articles})
 
 
 def detail(request, article_id):
-    return HttpResponse("You're looking at Article %s." % article_id)
+    art = Articles.objects.get(pk=article_id)
+    articles = Articles.objects.all()
+    return TemplateResponse(request, 'body_articl.html', {'art': art})
 
 
 def results(request, article_id):
