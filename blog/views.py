@@ -16,17 +16,7 @@ def index(request):
 
 def detail(request, article_id):
     art = Articles.objects.get(pk=article_id)
-    articles = Articles.objects.all()
     return TemplateResponse(request, 'body_articl.html', {'art': art})
-
-
-def results(request, article_id):
-    response = "You're looking at the results of question %s."
-    return HttpResponse(response % article_id)
-
-
-def vote(request, article_id):
-    return HttpResponse("You're voting on question %s." % article_id)
 
 
 # Create your views here.
