@@ -5,11 +5,10 @@ class Articles(models.Model):
 
     title = models.CharField(max_length=200)
 
-    description = models.TextField()
 
-    body = models.CharField(max_length=5000)
+    body = models.TextField()
 
-    date = models.DateTimeField()
+    date = models.DateTimeField(auto_now_add=True)
 
     category = models.CharField(max_length=50)
 

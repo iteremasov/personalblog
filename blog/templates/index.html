@@ -1,10 +1,13 @@
 {%extends 'base.html'%}
 
 {% block content %}
-<div>
-    {% for a in articles %}
-    <a href="{% url 'detail' a.id %}">{{a.title}}</a>
-    <div>{{a.description}}</div>
-    {%endfor%}
+<div class="container">
+      {% for a in articles %}
+     <font size="+3"> <p align="center"> <a href="{% url 'detail' a.id %}">{{a.title}}</a> </p> </font>
+     <div>
+         {{ a.body|truncatechars:200 }} </div>
+     {%endfor%}
 </div>
 {% endblock content %}
+
+
