@@ -1,8 +1,10 @@
-{%extends 'base.html'%}
 
+
+{%extends 'base.html'%}
 {% block content %}
 <div class="container">
 <div><font size="+3"><p align="center">{{art.title}}</p></font></div>
 <div>{{ art.body }}</div>
+<div><p align="right">{{art.date}}</p></div>
 </div>
 {% endblock content %}

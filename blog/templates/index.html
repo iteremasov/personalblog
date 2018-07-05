@@ -1,11 +1,14 @@
-{%extends 'base.html'%}
 
+
+{%extends 'base.html'%}
+<link rel="stylesheet" type="text/css" href="style.css" />
 {% block content %}
 <div class="container">
       {% for a in articles %}
-     <font size="+3"> <p align="center"> <a href="{% url 'detail' a.id %}">{{a.title}}</a> </p> </font>
+     <font size="+3"> <p align="left"> <a href="{% url 'detail' a.id %}">{{a.title}}</a> </p> </font>
      <div>
-         {{ a.body|truncatechars:200 }} </div>
+         {{ a.body|truncatewords:100 }} </div>
+      <div><p align="right">{{a.date}}</p></div>
      {%endfor%}
 </div>
 {% endblock content %}
