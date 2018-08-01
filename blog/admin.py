@@ -9,7 +9,11 @@ class CommentAdmin(admin.ModelAdmin):
     search_fields = ('name', 'email', 'body')
 
 
+class ArticleAdmin(admin.ModelAdmin):
+    prepopulated_fields = {"slug": ("title",)}
+
+
 admin.site.register(Comment, CommentAdmin)
-admin.site.register(Articles)
+admin.site.register(Articles, ArticleAdmin)
 
 # Register your models here.

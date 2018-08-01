@@ -16,14 +16,14 @@ def index(request):
     return TemplateResponse(request, 'index.html', {'articles': articles})
 
 
-def detail(request, article_id):
-    art = Articles.objects.get(pk=article_id)
+def detail(request, slug):
+    art = Articles.objects.get(pk=slug)
     comments = art.comments.filter(active=True)
     if request.method == 'POST':
         comment_form = CommentForm(data=request.POST)
         if comment_form.is_valid():
             new_comment = comment_form.save(commit=False)
-            new_comment.article_id = article_id
+            new_comment.article = art
             new_comment.save()
     else:
         comment_form = CommentForm()

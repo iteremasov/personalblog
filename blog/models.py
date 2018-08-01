@@ -10,6 +10,8 @@ class Articles(models.Model):
 
     category = models.CharField(max_length=50)
 
+    slug = models.SlugField(primary_key=True, max_length=250, unique=True)
+
 
 class Comment(models.Model):
     article = models.ForeignKey(Articles, on_delete=models.CASCADE, related_name='comments')
