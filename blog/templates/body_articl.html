@@ -3,8 +3,8 @@
 {% block content %}
 
 <div class="container">
-<div><font size="+3"><p align="center">{{art.title}}</p></font></div>
-<div>{{ art.body }}</div>
+<div><font size="+3">{{art.title}}</font></div>
+<div>{{ art.body|safe }}</div>
 <div><p align="right">{{art.date}}</p></div>
 {% with comments.count as total_comments %}
     <h2>
