@@ -39,3 +39,6 @@ def rgif(request):
     rgif = giphy.screensaver('funny')
     return TemplateResponse(request, 'rgif.html', {'source': rgif.id})
 
+def CV(request):
+    return TemplateResponse(request, 'CV.html', {})
+
