@@ -9,8 +9,8 @@
       {% autoescape off %}
       <div>{{ a.body|truncatewords_html:50 }} </div>
       {% endautoescape %}
- 
-      <p align="right">{{a.date}}</p>      
+
+      <p align="right">{{a.date|date:'d/m/Y'}}</p>
       {%endfor%}
 </div>
 {% endblock content %}

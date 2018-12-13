@@ -4,3 +4,4 @@ migrations
 *.pyc
 *.pyc
 *.diff
+__pycache__

@@ -1,10 +1,8 @@
 from django.shortcuts import render
 import giphypop
+
+from blog.actions.articles import get_articles, get_article
 from .forms import CommentForm
-
-from .models import Articles
-
-from django.http import HttpResponse
 
 from django.template.response import TemplateResponse
 
@@ -12,12 +10,11 @@ giphy = giphypop.Giphy()
 
 
 def index(request):
-    articles = Articles.objects.all()
-    return TemplateResponse(request, 'index.html', {'articles': articles})
+    return TemplateResponse(request, 'index.html', {'articles': get_articles()})
 
 
 def detail(request, slug):
-    art = Articles.objects.get(pk=slug)
+    art = get_article(slug)
     comments = art.comments.filter(active=True)
     if request.method == 'POST':
         comment_form = CommentForm(data=request.POST)
@@ -36,9 +33,9 @@ def detail(request, slug):
 
 # Create your views here.
 def rgif(request):
-    rgif = giphy.screensaver('funny')
+    rgif = giphy.screensaver('cats')
     return TemplateResponse(request, 'rgif.html', {'source': rgif.id})
+
 
 def CV(request):
     return TemplateResponse(request, 'CV.html', {})
-
