@@ -7,12 +7,26 @@ As the project is written, instructions will be added.
 
 **Prerequisites**
 
-1. OS - Ubuntu 16+
-2. clone && install Django
-3. clone this project
+1. Ubuntu 16+
+2. Python 3+
+3. Django
+4. Clone this project
+5. Sqllite3
+
+**How to setup**
+1. Create vertual env (optional but recommended)
+2. Go to project dir and run 
+```
+pip install -r requirements.txt
+```
+3. Create database
+```
+./manage.py migrate
+```
 
 **How to run**
 
-1. 
-2. 
-3. 
+Run command:
+```
+./manage.py runserver
+```
