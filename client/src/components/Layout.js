@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 export const Layout = ({children}) => {
   return (
-    <Container fluid>
+    <Container>
       <Row>
         {children}
       </Row>

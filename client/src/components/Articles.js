@@ -1,5 +1,6 @@
 import React from 'react';
 import { Media } from 'reactstrap';
+import './Articles.css';
 
 export class Articles extends React.Component {
   state = {
@@ -21,10 +22,10 @@ export class Articles extends React.Component {
     } else {
       return this.state.articles.map((article) => {
         return (
-          <Media>
+          <Media className='Articles'>
             <Media body>
               <Media heading>{article.title}</Media>
-              {article.body}
+              <td dangerouslySetInnerHTML={{__html: article.body.replace(/\<href.*id=\"blogBreak.*$/, '')}} />
             </Media>
           </Media>
         )
