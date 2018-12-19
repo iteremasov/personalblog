@@ -25,7 +25,7 @@ export class Articles extends React.Component {
           <Media className='Articles'>
             <Media body>
               <Media heading>{article.title}</Media>
-              <td dangerouslySetInnerHTML={{__html: article.body.replace(/\<href.*id=\"blogBreak.*$/, '')}} />
+              <td dangerouslySetInnerHTML={{__html: article.body}} />
             </Media>
           </Media>
         )
