@@ -1,19 +1,18 @@
 from django.db import models
-from ckeditor.fields import RichTextField
 
 from markdownx.models import MarkdownxField
 
 
 class Articles(models.Model):
-    title = RichTextField(max_length=200)
+    title = models.CharField(max_length=200)
 
     body = MarkdownxField()
 
     date = models.DateTimeField(auto_now_add=True)
 
-    category = RichTextField(max_length=100)
+    category = models.CharField(max_length=100)
 
-    description = RichTextField(max_length=100)
+    description = models.CharField(max_length=400)
 
     is_published = models.BooleanField()
 
