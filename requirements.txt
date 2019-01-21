@@ -3,8 +3,11 @@ chardet==3.0.4
 Django==2.0.8
 django-ckeditor==5.6.1
 django-js-asset==1.1.0
+django-markdownx==2.0.28
 giphypop==0.3
 idna==2.6
+Markdown==3.0.1
+Pillow==5.4.1
 pkg-resources==0.0.0
 python-dateutil==2.6.1
 pytz==2018.4
