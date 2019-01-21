@@ -1,13 +1,11 @@
 import React from 'react';
-import {Container, Row} from 'reactstrap'
 import PropTypes from 'prop-types';
+import { Container } from 'semantic-ui-react';
 
 export const Layout = ({children}) => {
   return (
     <Container>
-      <Row>
         {children}
-      </Row>
     </Container>
   )
 };

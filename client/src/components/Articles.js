@@ -1,6 +1,7 @@
 import React from 'react';
-import { Media } from 'reactstrap';
 import './Articles.css';
+
+const ReactMarkdown = require('react-markdown')
 
 export class Articles extends React.Component {
   state = {
@@ -22,12 +23,12 @@ export class Articles extends React.Component {
     } else {
       return this.state.articles.map((article) => {
         return (
-          <Media className='Articles'>
-            <Media body>
-              <Media heading>{article.title}</Media>
-              <td dangerouslySetInnerHTML={{__html: article.body.replace(/<a\s*id="break"(.|\s)*/gm, '') /* TODO this not very well and should be fixed */}} />
-            </Media>
-          </Media>
+          <div className='Articles'>
+            <div body>
+              < ReactMarkdown source={ article.title } />
+              < ReactMarkdown source={ article.body  } />
+            </div>
+          </div>
         )
       })
     }

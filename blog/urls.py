@@ -11,5 +11,6 @@ urlpatterns = [
 
     # API Methods for react app
 
-    path('api/articles', api.get_articles_controller)
+    path('api/articles', api.get_articles_controller),
+    path('api/articles/<slug>/', api.get_article_controller)
 ]

@@ -2,6 +2,8 @@ from django.contrib import admin
 
 from .models import Articles, Comment
 
+from markdownx.admin import MarkdownxModelAdmin
+
 
 class CommentAdmin(admin.ModelAdmin):
     list_display = ('name', 'email', 'article', 'created', 'active')
@@ -14,6 +16,6 @@ class ArticleAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Comment, CommentAdmin)
-admin.site.register(Articles, ArticleAdmin)
+admin.site.register(Articles, MarkdownxModelAdmin)
 
 # Register your models here.
