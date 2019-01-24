@@ -11,7 +11,7 @@ class CommentAdmin(admin.ModelAdmin):
     search_fields = ('name', 'email', 'body')
 
 
-class ArticleAdmin(admin.ModelAdmin):
+class ArticlesAdmin(admin.ModelAdmin):
     prepopulated_fields = {"slug": ("title",)}
 
 
