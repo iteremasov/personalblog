@@ -1,5 +1,5 @@
 configobj==5.0.6
-Django==1.11.23
+Django==1.11.29
 django-js-asset==1.1.0
 nemo-emblems==3.8.0
 pycairo==1.16.2
