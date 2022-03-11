@@ -6,7 +6,7 @@ django-markdownx==2.0.28
 giphypop==0.3
 idna==2.6
 Markdown==3.0.1
-Pillow==5.4.1
+Pillow==9.0.1
 pkg-resources==0.0.0
 python-dateutil==2.6.1
 pytz==2018.4
